@@ -12,6 +12,4 @@ module.exports = `
  * ${config.name}
  * @version ${config.version}
  * @author ${config.author}
- * @license ${config.license}
- * @see {@link ${config.homepage}}
  */`;
