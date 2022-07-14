@@ -1,30 +1,28 @@
 const rollup = require('rollup');
-const typescript = require('@rollup/plugin-typescript');
 const { terser } = require('rollup-plugin-terser');
 const banner = require('./banner');
 
 
 (async () => {
     const bundle = await rollup.rollup({
-        input: 'src/ECharts.ts',
+        input: 'src/swiper.js',
         plugins: [
-            typescript(),
             terser(),
         ],
     });
 
     // Create the UMD version
     await bundle.write({
-        file: 'dist/echarts-for-vue.js',
+        file: 'dist/swiper-for-vue.js',
         banner,
         sourcemap: true,
         format: 'umd',
-        name: 'EChartsForVue',
+        name: 'SwiperForVue',
     });
 
     // Create the ESM version
     await bundle.write({
-        file: 'dist/echarts-for-vue.mjs',
+        file: 'dist/swiper-for-vue.mjs',
         banner,
         sourcemap: true,
         format: 'esm',
