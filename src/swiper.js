@@ -67,16 +67,15 @@ function vue2Render() {
                             virtualIndex={index}
                             class="swiper-item-infor"
                             v-slot="{isActive}"
-                            vOn:click={goBack}
+                            nativeOnClick={goBack}
                         >
                             <div class="swiper-zoom-container">
-                                <span class="swiperImgSpan" v-if="flag == 1 && isActive" vOn:click_stop_prevent>
+                                <span class="swiperImgSpan" v-if="flag == 1 && isActive">
                                     {index + 1}/{goodsList?.length}
                                 </span>
                                 <img
                                     src={value.img}
                                     flags="flag"
-                                    vOn:click_stop_prevent
                                     style="width: 100vw"
                                 />
                             </div>
@@ -91,7 +90,6 @@ function vue2Render() {
 function getVue3Render(h) {
     return function () {
         return h('div', {
-            ...$attrs,
             style,
         })
     }

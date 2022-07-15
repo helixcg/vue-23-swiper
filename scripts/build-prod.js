@@ -1,13 +1,16 @@
 const rollup = require('rollup');
 const { terser } = require('rollup-plugin-terser');
 const banner = require('./banner');
-
+const babel = require('rollup-plugin-babel');
 
 (async () => {
     const bundle = await rollup.rollup({
         input: 'src/swiper.js',
         plugins: [
             terser(),
+            babel({
+                presets: ['@vue/babel-preset-jsx'],
+            }),
         ],
     });
 

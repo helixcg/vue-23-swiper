@@ -4,7 +4,7 @@ export default {
         option: Object,
     },
 
-    mounted(this) {
+    mounted() {
         new Swiper('.swiper1', {
             pagination: {
                 el: '.swiper-pagination'
